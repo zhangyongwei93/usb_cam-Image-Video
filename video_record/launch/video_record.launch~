@@ -1,0 +1,12 @@
+<launch>
+
+    <arg name="filename" default="/home/uav_02/Videos/video_01.avi" />  
+
+    <node name="video_record_node" pkg="video_record" type="video_record_node" output="screen" >
+        <param name="filename" type="str" value="$(arg filename)" />
+    </node>
+
+    <include file="$(find usb_cam)/launch/usb_cam-test.launch">
+    </include>
+
+</launch>
